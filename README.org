@@ -1,5 +1,5 @@
 * Description
-[[./screenshot.webp]]
+[[./screenshot.jpg]]
 
 [[https://github.com/lutris/lutris][Lutris]] YAML script(s) for installing [[https://pixologic.com/features/about-zbrush.php][ZBrush]] on a GNU/Linux operating system.
 
