@@ -20,6 +20,8 @@ Using Winetricks, Lutris installer will automatically pull Visual C++ runtime li
 
 ZBrush installer executable will detect that a newer version of VC runtime 2008 libraries is already installed. Just click the /Cancel/ button. It will also install VC2017, for which there are already overrides present created by winetricks. Don't cancel this one, let it proceed.
 
+The installation will take about 3.8 GB of hard disk space.
+
 * What works and what doesn't
 Everything seems to be working properly. Intuos pen pressure works, as well as both ZRemesher algorithms. Even the elusive Lightbox.
 
