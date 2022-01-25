@@ -1,0 +1,30 @@
+* Description
+[[./screenshot.webp]]
+
+[[https://github.com/lutris/lutris][Lutris]] YAML script(s) for installing [[https://pixologic.com/features/about-zbrush.php][ZBrush]] on a GNU/Linux operating system.
+
+* Installation
+To install ZBrush, first make sure that you have downloaded the installer from your Pixologic account.
+
+Clone this repository to a path of your choice, and invoke Lutris with:
+
+#+begin_src bash
+lutris -i /absolute/path/to/installation-script.yml
+#+end_src
+
+where ~installation-script.yml~ is a filename of YAML script for a specific ZBrush version. Currently, only one is supported, so there aren't many versions to choose from.
+
+You will be asked to specify installation path where you want Wineprefix to reside in, and a path to the downloaded ZBrush installer executable.
+
+Using Winetricks, Lutris installer will automatically pull Visual C++ runtime libraries that I think are required for the proper functioning of ZBrush. If you believe those libraries are not necessary and ZBrush works perfectly fine without them, let me know.
+
+ZBrush installer executable will detect that a newer version of VC runtime 2008 libraries is already installed. Just click the /Cancel/ button. It will also install VC2017, for which there are already overrides present created by winetricks. Don't cancel this one, let it proceed.
+
+* What works and what doesn't
+Everything seems to be working properly. Intuos pen pressure works, as well as both ZRemesher algorithms. Even the elusive Lightbox.
+
+Performance is great, though I'm unable to compare it with ZBrush running on a native Windows machine, as none of my workstations has this OS.
+
+For obvious reasons, you can probably forget about AppLinks.
+
+Quitting ZBrush will cause the whole desktop to freeze for a couple of seconds (at least the XFCE I tested it on). Once the program shuts down, desktop environment will be responsive again.

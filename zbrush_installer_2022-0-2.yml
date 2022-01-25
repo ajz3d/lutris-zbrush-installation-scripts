@@ -1,0 +1,42 @@
+name: ZBrush
+game_slug: zbrush_2022-0-2
+version: 2022.0.2
+slug: zbrush_installer_2022-0-2
+runner: wine
+
+script:
+  game:
+    exe: "$GAMEDIR/drive_c/Program Files/Pixologic/ZBrush 2022/ZBrush.exe"
+    arch: win64
+    prefix: "$GAMEDIR"
+
+  files:
+    - setup_exe: "N/A: Select setup executable (ZBrush_2022.0.2_Installer.exe)."
+
+  installer:
+    - task:
+        description: Creating wineprefix...
+        name: create_prefix
+        arch: win64
+    - task:
+        description: Installing Visual C++ 2008 Runtime Libraries
+        name: winetricks
+        app: vcrun2008
+    - task:
+        description: Installing Visual C++ 2010 Runtime Libraries
+        name: winetricks
+        app: vcrun2010
+    - task:
+        description: Installing Visual C++ 2017 Runtime Libraries
+        name: winetricks
+        app: vcrun2017
+    - task:
+        description: Installing the main program...
+        name: wineexec
+        executable: setup_exe
+
+  wine:
+    arch: win64
+    version: lutris-6.21-6-x86_64
+    dxvk: true
+    esync: true
